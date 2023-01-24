@@ -118,7 +118,12 @@ function exitFullscreen() {
 
 // ------------------------ CONTROLS ------------------------------
 
-
+function mobilePause() {
+  if (!player.paused) {
+    player.toggleControls();
+    player.togglePlay();
+  }
+}
 
 // Change "{}" to your options:
 // by Brian Ramirez
@@ -156,12 +161,14 @@ function initKiwiPlayer() {
   player.on('ready', () => {
     player.currentTime = 0;
     player.volume = 0;
-    player.elements.original.setAttribute(
-      "onClick", "player.toggleControls(); player.togglePlay();");
+    // player.elements.original.setAttribute(
+    // "onClick", "player.toggleControls(); player.togglePlay();");
     // player.elements.poster.setAttribute(
     // "onClick", "player.toggleControls(); player.togglePlay();");
     // document.getElementsByClassName("plyr__controls")[0].setAttribute(
     // "onClick", "player.toggleControls(); player.togglePlay();");
+    player.elemets.container.setAttribute(
+      "onClick", "mobilePause()");
   });
 
   var sound = false;
