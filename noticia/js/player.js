@@ -186,6 +186,7 @@ function initKiwiPlayer() {
     type: 'video',
     controls: [],
     muted: true,
+    playsinline: true,
     loop: {
       active: true
     },
