@@ -108,7 +108,8 @@ function updateProgress(player_time, player_duration) {
 
 
 function exitFullscreen() {
-  if (document.webkitFullscreenElement != null) {
+  if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement ||
+    document.msFullscreenElement) {
     document.webkitExitFullscreen();
   }
 }
@@ -165,7 +166,7 @@ function initKiwiPlayer() {
   var sound = false;
 
   player.on('playing', () => {
-    exitFullscreen();
+    // exitFullscreen();
     player.volume = 1;
     player.muted = false;
     player.elements.poster.style.opacity = 0;
@@ -191,7 +192,7 @@ function initKiwiPlayer() {
   player.on('pause', () => {
     player.elements.poster.style.opacity = 1;
     player.elements.poster.style.zIndex = 8;
-    exitFullscreen();
+    // exitFullscreen();
   });
 
 
