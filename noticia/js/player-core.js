@@ -116,7 +116,7 @@ class KiwiVSLPlayer {
 
     html =
       `
-    <video id="player${this.index}" data-poster="https://i.ytimg.com/vi/${this.video_id}/maxresdefault.jpg">
+    <video id="player${this.index}" data-poster="https://i.ytimg.com/vi/${this.video_id}/maxresdefault.jpg" webkit-playsinline playsinline>
       ${sources}
     </video>`;
 
@@ -162,7 +162,7 @@ class KiwiVSLPlayer {
 
     html =
       `
-    <video id="player${this.index}_vt" class="kiwivsl-videothumbnail" >
+    <video id="player${this.index}_vt" class="kiwivsl-videothumbnail" webkit-playsinline playsinline>
       ${sources}
     </video>`;
 
