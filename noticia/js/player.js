@@ -145,6 +145,7 @@ function initKiwiPlayer() {
     exitFullscreen();
     player.volume = 1;
     player.muted = false;
+    player.elements.poster.style.display = 'none';
     if (player.currentTime > 1595 && dnone) {
       // console.log('oi');
       // 1900 secs
@@ -177,6 +178,7 @@ function initKiwiPlayer() {
     player.volume = 1;
     player.muted = false;
     player.elements.poster.style.opacity = 0;
+    player.elements.poster.style.display = 'none';
     if (!sound) {
       player.currentTime = 0;
       sound = true;
@@ -197,6 +199,7 @@ function initKiwiPlayer() {
   });
 
   player.on('pause', () => {
+    player.elements.poster.style.display = 'block';
     player.elements.poster.style.opacity = 1;
     player.elements.poster.style.zIndex = 8;
     exitFullscreen();
