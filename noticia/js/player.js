@@ -167,8 +167,8 @@ function initKiwiPlayer() {
     // "onClick", "player.toggleControls(); player.togglePlay();");
     // document.getElementsByClassName("plyr__controls")[0].setAttribute(
     // "onClick", "player.toggleControls(); player.togglePlay();");
-    player.elements.container.setAttribute(
-      "onClick", "mobilePause()");
+    // player.elements.container.setAttribute(
+    //   "onClick", "mobilePause()");
   });
 
   var sound = false;
