@@ -178,6 +178,7 @@ function initKiwiPlayer() {
 
   player.on('pause', () => {
     player.elements.poster.style.opacity = 1;
+    player.elements.poster.style.zIndex = 10;
   });
 
 
