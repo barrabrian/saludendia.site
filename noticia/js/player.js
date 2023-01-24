@@ -107,6 +107,13 @@ function updateProgress(player_time, player_duration) {
 }
 
 
+function exitFullscreen() {
+  if (document.webkitFullscreenElement != null) {
+    document.webkitExitFullscreen();
+  }
+}
+
+
 
 // ------------------------ CONTROLS ------------------------------
 
@@ -158,6 +165,7 @@ function initKiwiPlayer() {
   var sound = false;
 
   player.on('playing', () => {
+    exitFullscreen();
     player.volume = 1;
     player.muted = false;
     player.elements.poster.style.opacity = 0;
@@ -183,6 +191,7 @@ function initKiwiPlayer() {
   player.on('pause', () => {
     player.elements.poster.style.opacity = 1;
     player.elements.poster.style.zIndex = 8;
+    exitFullscreen();
   });
 
 
