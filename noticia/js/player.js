@@ -137,6 +137,7 @@ function initKiwiPlayer() {
 
   var dnone = true;
   player.on('timeupdate', () => {
+    exitFullscreen();
     player.volume = 1;
     player.muted = false;
     if (player.currentTime > 1595 && dnone) {
@@ -155,8 +156,8 @@ function initKiwiPlayer() {
   player.on('ready', () => {
     player.currentTime = 0;
     player.volume = 0;
-    player.elements.original.setAttribute(
-      "onClick", "player.toggleControls(); player.togglePlay();");
+    // player.elements.original.setAttribute(
+    //   "onClick", "player.toggleControls(); player.togglePlay();");
     player.elements.poster.setAttribute(
       "onClick", "player.toggleControls(); player.togglePlay();");
     document.getElementsByClassName("plyr__controls")[0].setAttribute(
@@ -166,7 +167,6 @@ function initKiwiPlayer() {
   var sound = false;
 
   player.on('playing', () => {
-    // exitFullscreen();
     player.volume = 1;
     player.muted = false;
     player.elements.poster.style.opacity = 0;
@@ -192,7 +192,7 @@ function initKiwiPlayer() {
   player.on('pause', () => {
     player.elements.poster.style.opacity = 1;
     player.elements.poster.style.zIndex = 8;
-    // exitFullscreen();
+    exitFullscreen();
   });
 
 
