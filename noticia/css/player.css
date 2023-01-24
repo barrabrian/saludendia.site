@@ -132,6 +132,10 @@ video::-webkit-media-controls-panel {
 display: none !important;
 opacity: 1 !important;}
 
+.plyr__poster {
+  z-index: 10;
+}
+
 @media screen and (max-width: 728px){
     .first-layer .box{
         width: auto;
