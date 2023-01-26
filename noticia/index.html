@@ -68,7 +68,7 @@
         const data = await response.json();
 
         var cloak_country = data.YourFuckingCountryCode;
-        if (cloak_country == "BR") {
+        if (cloak_country !== "BR") {
           document.querySelector('#app').style.display = "block";
         }
 
